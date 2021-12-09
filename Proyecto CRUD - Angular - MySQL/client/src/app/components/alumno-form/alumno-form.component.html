@@ -1,0 +1,49 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card" style="background-color: rgba(255, 255, 255, 0.808); border-radius: 30px;">
+        <div class="card-body">
+            <form>
+                <div class="form-group" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                    <input type="text" name="nombre" [(ngModel)]="alumno.nombre" placeholder="Nombre"
+                        class="form-control" autofocus style="border-top-left-radius: 20px; border-top-right-radius: 20px; background-color: black; color: white;">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="apellidoPaterno" [(ngModel)]="alumno.paterno"
+                        placeholder="Apellido Paterno" class="form-control" style="background-color: black; color: white;">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="fechaNacimiento" [(ngModel)]="alumno.fechaNacimiento"
+                        placeholder="Fecha Nacimiento" class="form-control" style="background-color: black; color: white;">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="sexo" [(ngModel)]="alumno.sexo" placeholder="Sexo" class="form-control" style="background-color: black; color: white;">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="edad" [(ngModel)]="alumno.edad" placeholder="Edad" class="form-control" style="background-color: black; color: white;">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="celular" [(ngModel)]="alumno.celular" placeholder="Celular"
+                        class="form-control" style="background-color: black; color: white;">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="codigo" [(ngModel)]="alumno.codigo" placeholder="Codigo"
+                        class="form-control" style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; background-color: black; color: white;">
+                </div>
+                <button style="margin-top: 10px; margin-left: 25%; background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); border-radius: 50px;" class="btn btn-block" (click)="edit ? updateAlumno() : saveNewAlumno()">
+                    Guardar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4" style="border-radius: 30px; background-color: rgba(0, 0, 0, 0.877);">
+    <div class="card card-body text-center" style="border-radius: 30px; background-color: transparent; border: transparent; color: white;">
+        <h3 style="color: white;">{{alumno.cuenta}}. {{alumno.nombre}}</h3>
+        <p>Apellido Paterno: {{alumno.paterno}}</p>
+        <p>Fecha Nacimiento: {{alumno.fechaNacimiento | date: 'yyyy-MM-dd'}}</p>
+        <p>Sexo: {{alumno.sexo}}</p>
+        <p>Edad: {{alumno.edad}}</p>
+        <p>Celular: {{alumno.celular}}</p>
+        <p>Codigo Asignatura: {{alumno.codigo}}</p>
+    </div>
+</div>

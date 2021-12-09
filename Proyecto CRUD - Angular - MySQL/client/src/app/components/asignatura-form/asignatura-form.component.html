@@ -1,0 +1,39 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card" style="background-color: rgba(0, 0, 0, 0.753); border-radius: 30px;">
+        <div class="card-body">
+            <form>
+                <div class="form-group" style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                    <input type="text" name="nombre" [(ngModel)]="asignatura.nombre" placeholder="Nombre"
+                        class="form-control" autofocus style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="creditos" [(ngModel)]="asignatura.creditos" placeholder="Creditos"
+                        class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="horas" [(ngModel)]="asignatura.horas" placeholder="Horas"
+                        class="form-control">
+                </div>
+                <div class="form-group" style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+                    <input type="text" name="horaRegistro" [(ngModel)]="asignatura.horaRegistro"
+                        placeholder="Hora Registro" class="form-control" style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+                </div>
+                <div>
+                    <button style="margin-top: 10px; margin-left: 25%; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0); border-radius: 50px;" class="btn btn-block" (click)="edit ? updateAsignatura() : saveNewAsignatura()">
+                        Guardar
+                    </button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4" style="border-radius: 30px; background-color: rgba(255, 255, 255, 0.877);">
+    <div class="card card-body text-center" style="border-radius: 30px; background-color: transparent; border: transparent;">
+        <h3>{{asignatura.codigo}}. {{asignatura.nombre}}</h3>
+        <p>Creditos: {{asignatura.creditos}}</p>
+        <p>Horas: {{asignatura.horas}}</p>
+        <p>Hora Registro: {{asignatura.horaRegistro}}</p>
+    </div>
+</div>

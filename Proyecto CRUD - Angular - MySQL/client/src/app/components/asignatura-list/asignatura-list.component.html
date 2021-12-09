@@ -1,0 +1,25 @@
+<div class="col-md-4" *ngFor="let asignatura of asignaturas">
+    <div class="card text-center" style="border-color: transparent; border-radius: 30px; background-color: rgba(75, 75, 75, 0);">
+        <div class="card-header d-flex justify-content-between align-items-center" style="background-color: rgba(160, 160, 160, 0.637); border-top-left-radius: 30px; border-top-right-radius: 30px; color: white; border-color: black;">
+            <p>{{asignatura.codigo}}</p>
+            {{asignatura.nombre}}
+            <button class="btn" style="background-color: rgb(255, 254, 254, 0.637); color: rgb(0, 0, 0); border-radius: 70px;" (click)="deleteAsignatura(asignatura.codigo)">
+                <i class="far fa-trash-alt" style="font-size: 20px;"></i>
+            </button>
+        </div>
+        <div class="card-body" style="margin: 0px; padding: 0px; padding-top: 10px; background-color: rgb(75, 75, 75, 0.637);">
+            <p>Creditos: {{asignatura.creditos}}</p>
+        </div>
+        <div class="card-body" style="margin: 0px; padding: 0px; padding-top: 10px; background-color: rgb(160, 160, 160, 0.637);">
+            <p>Horas: {{asignatura.horas}}</p>
+        </div>
+        <div class="card-body" style="margin: 0px; padding: 0px; padding-top: 10px; background-color: rgb(75, 75, 75, 0.637);">
+            <p>Hora Registro: {{asignatura.horaRegistro}}</p>
+        </div>
+        <div class="card-body" style="margin: 0px; padding: 0px; padding-top: 10px; padding-bottom: 10px; background-color: rgb(160, 160, 160, 0.637); border-bottom-right-radius: 30px; border-bottom-left-radius: 30px;">
+            <a [routerLink]="['/asignatura/edit', asignatura.codigo]" class="btn btn-block" style="background-color: rgba(0, 0, 0, 0.637); color: white; border-radius: 50px;">
+                Editar Asignatura
+            </a>
+        </div>
+    </div>
+</div>
